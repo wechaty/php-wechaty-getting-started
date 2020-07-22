@@ -389,7 +389,7 @@ export async function addExtensionLinux(
         break;
       // match grpc and protobuf
       case /^(grpc|protobuf)$/.test(extension):
-        command = command_prefix + '-' + extension + pipe;
+        command = 'sudo pecl install -f ' + extension;
         break;
       // match sqlite
       case /^sqlite$/.test(extension):
