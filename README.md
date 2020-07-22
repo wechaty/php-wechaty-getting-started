@@ -1,4 +1,4 @@
-# php-wechaty-getting-started [![PHP Version](https://img.shields.io/maven-central/v/io.github.wechaty/wechaty?label=PHP)](https://packagist.org/packages/wechaty/php-wechaty) [![PHP CI](https://github.com/wechaty/php-wechaty-getting-started/workflows/PHP%20CI/badge.svg)](https://github.com/wechaty/php-wechaty-getting-started/actions?query=workflow%3A%22PHP+CI%22)
+# php-wechaty-getting-started [![PHP Version](https://img.shields.io/packagist/v/wechaty/php-wechaty)](https://packagist.org/packages/wechaty/php-wechaty) [![PHP CI](https://github.com/wechaty/php-wechaty-getting-started/workflows/PHP%20CI/badge.svg)](https://github.com/wechaty/php-wechaty-getting-started/actions?query=workflow%3A%22PHP+CI%22)
 
 [![PHP Wechaty](https://wechaty.github.io/php-wechaty/images/php-wechaty.png)](https://github.com/wechaty/php-wechaty-getting-started)
 
@@ -9,7 +9,7 @@ PHP Wechaty Starter Project Template that Works Out-of-the-Box
 ## Connecting Chatbots
 
 [![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-brightgreen.svg)](https://github.com/Wechaty/wechaty)
-[![PHP Version](https://img.shields.io/maven-central/v/io.github.wechaty/wechaty?label=PHP)](https://packagist.org/packages/wechaty/php-wechaty)
+[![PHP Version](https://img.shields.io/packagist/v/wechaty/php-wechaty)](https://packagist.org/packages/wechaty/php-wechaty)
 
 Wechaty is a RPA SDK for Wechat **Individual** Account that can help you create a chatbot in 8 lines of PHP.
 
