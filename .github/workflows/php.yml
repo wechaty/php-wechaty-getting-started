@@ -23,7 +23,7 @@ jobs:
 
     steps:
     - name: Checkout
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
     - name: Setup PHP with extensions and custom config
       run: node dist/index.js
       env:
