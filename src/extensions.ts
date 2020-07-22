@@ -387,6 +387,10 @@ export async function addExtensionLinux(
       case /^(ast|uopz)$/.test(extension):
         command = command_prefix + '-' + extension + pipe;
         break;
+      // match grpc and protobuf
+      case /^(grpc|protobuf)$/.test(extension):
+        command = command_prefix + '-' + extension + pipe;
+        break;
       // match sqlite
       case /^sqlite$/.test(extension):
         extension = 'sqlite3';
