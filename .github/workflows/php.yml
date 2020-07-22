@@ -18,7 +18,7 @@ jobs:
         operating-system: [ubuntu-20.04]
         php-versions: ['7.4', '8.0']
     env:
-      extensions: xml, opcache, xdebug, pcov, grpc, protobuf
+      extensions: xml, opcache, xdebug, pcov, grpc-1.3.0, protobuf-3.3.0
       key: cache-v3
 
     steps:
