@@ -9,7 +9,7 @@ on:
     branches: [ master ]
 
 jobs:
-  run:
+  build:
     name: Run
     runs-on: ${{ matrix.operating-system }}
     strategy:
@@ -22,21 +22,21 @@ jobs:
       key: cache-v3
 
     steps:
-      - name: Checkout
-      - uses: actions/checkout@v2
-      - name: Setup PHP with extensions and custom config
-        run: node dist/index.js
-        env:
-          php-version: ${{ matrix.php-versions }}
-          extensions: ${{ env.extensions }}
-          ini-values: post_max_size=256M, short_open_tag=On, date.timezone=Asia/Shanghai
-      - name: Testing PHP version
-        run: |
-          php -v
-          php -r "if(strpos(phpversion(), '${{ matrix.php-versions }}') === false) {throw new Exception('Wrong PHP version Installed');}"
-          - name: Testing Composer version
-            run: |
-              composer -V
-              php -r "if(strpos(@exec('composer -V'), 'Composer version') === false) {throw new Exception('Composer not found');}"
-      - name: install with composer
-        run: composer install
+    - name: Checkout
+    - uses: actions/checkout@v2
+    - name: Setup PHP with extensions and custom config
+      run: node dist/index.js
+      env:
+        php-version: ${{ matrix.php-versions }}
+        extensions: ${{ env.extensions }}
+        ini-values: post_max_size=256M, short_open_tag=On, date.timezone=Asia/Shanghai
+    - name: Testing PHP version
+      run: |
+        php -v
+        php -r "if(strpos(phpversion(), '${{ matrix.php-versions }}') === false) {throw new Exception('Wrong PHP version Installed');}"
+    - name: Testing Composer version
+      run: |
+        composer -V
+        php -r "if(strpos(@exec('composer -V'), 'Composer version') === false) {throw new Exception('Composer not found');}"
+    - name: install with composer
+      run: composer install
