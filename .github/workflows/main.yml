@@ -1,0 +1,42 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  run:
+    name: Run
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ubuntu-20.04]
+        php-versions: ['7.4', '8.0']
+    env:
+      extensions: xml, opcache, xdebug, pcov, grpc, protobuf
+      key: cache-v3
+
+    steps:
+      - name: Checkout
+      - uses: actions/checkout@v2
+      - name: Setup PHP with extensions and custom config
+        run: node dist/index.js
+        env:
+          php-version: ${{ matrix.php-versions }}
+          extensions: ${{ env.extensions }}
+          ini-values: post_max_size=256M, short_open_tag=On, date.timezone=Asia/Shanghai
+      - name: Testing PHP version
+        run: |
+          php -v
+          php -r "if(strpos(phpversion(), '${{ matrix.php-versions }}') === false) {throw new Exception('Wrong PHP version Installed');}"
+          - name: Testing Composer version
+            run: |
+              composer -V
+              php -r "if(strpos(@exec('composer -V'), 'Composer version') === false) {throw new Exception('Composer not found');}"
+      - name: install with composer
+        run: composer install
