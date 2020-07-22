@@ -11,9 +11,9 @@ PHP Wechaty Starter Project Template that Works Out-of-the-Box
 [![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-brightgreen.svg)](https://github.com/Wechaty/wechaty)
 [![PHP Version](https://img.shields.io/maven-central/v/io.github.wechaty/wechaty?label=PHP)](https://packagist.org/packages/wechaty/php-wechaty)
 
-Wechaty is a RPA SDK for Wechat **Individual** Account that can help you create a chatbot in 6 lines of PHP.
+Wechaty is a RPA SDK for Wechat **Individual** Account that can help you create a chatbot in 8 lines of PHP.
 
-## The World's Shortest Java ChatBot: 8 lines of Code
+## The World's Shortest PHP ChatBot: 8 lines of Code
 
 ```php
 $wechaty = \IO\Github\Wechaty\Wechaty::getInstance($token, $endPoint);
