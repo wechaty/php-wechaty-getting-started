@@ -34,6 +34,7 @@ $wechaty->onScan(function($qrcode, $status, $data) {
 # Install make sure php is 7.4+
 sudo yum install php-pecl-grpc
 sudo yum install php-pecl-protobuf
+sudo yum install php-xml
 # curl -sS https://getcomposer.org/installer | php
 php -r "copy('https://install.phpcomposer.com/installer', 'composer-setup.php');"
 php composer-setup.php
