@@ -10,14 +10,16 @@ on:
 
 jobs:
   run:
-    name: Run
+    uses: shivammathur/setup-php@v2
     runs-on: ${{ matrix.operating-system }}
     strategy:
       fail-fast: false
       matrix:
         operating-system: [ubuntu-20.04]
         php-versions: ['7.4']
-    env:
+    with:
+      php-version: '7.4'
+      tools: pecl
       extensions: xml, opcache, xdebug, pcov, grpc-1.30.0, protobuf-3.12.2
       key: cache-v3
 
