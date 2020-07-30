@@ -10,16 +10,14 @@ on:
 
 jobs:
   run:
-    uses: shivammathur/setup-php@v2
+    name: Run
     runs-on: ${{ matrix.operating-system }}
     strategy:
       fail-fast: false
       matrix:
         operating-system: [ubuntu-20.04]
         php-versions: ['7.4']
-    with:
-      php-version: '7.4'
-      tools: pecl
+    env:
       extensions: xml, opcache, xdebug, pcov, grpc-1.30.0, protobuf-3.12.2
       key: cache-v3
 
@@ -27,11 +25,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Setup PHP with extensions and custom config
-      run: node dist/index.js
-      env:
+      run: shivammathur/setup-php@v2
+      with:
         php-version: ${{ matrix.php-versions }}
         extensions: ${{ env.extensions }}
         ini-values: post_max_size=256M, short_open_tag=On, date.timezone=Asia/Shanghai
+        tools: composer:v2
     - name: Testing PHP version
       run: |
         php -v
