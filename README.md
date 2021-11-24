@@ -52,6 +52,31 @@ export WECHATY_PUPPET_HOSTIE_TOKEN=your_token_at_here
 make bot
 ```
 
+#### New environment variables
+
+<!-- markdownlint-disable MD013 -->
+
+1. `WECHATY_PUPPET_SERVICE_TLS_CA_CERT`: can be overwrite by `options.tlsRootCert`. Set Root CA Cert to verify the server or client.
+
+For Puppet Server:
+
+| Environment Variable | Options | Description |
+| -------------------- | ------- | ----------- |
+| `WECHATY_PUPPET_SERVICE_TLS_SERVER_CERT` | `options.tls.serverCert` | Server CA Cert (string data) |
+| `WECHATY_PUPPET_SERVICE_TLS_SERVER_KEY` | `options.tls.serverKey` | Server CA Key (string data) |
+| `WECHATY_PUPPET_SERVICE_NO_TLS_INSECURE_SERVER` | `options.tls.disable` | Set `true` to disable server TLS |
+
+For Puppet Client:
+
+| Environment Variable | Options | Description |
+| -------------------- | ------- | ----------- |
+| `WECHATY_PUPPET_SERVICE_AUTHORITY` | `options.authority` | Service discovery host, default: `api.chatie.io` |
+| `WECHATY_PUPPET_SERVICE_TLS_CA_CERT` | `options.caCert` | Certification Authority Root Cert, default is using Wechaty Community root cert |
+| `WECHATY_PUPPET_SERVICE_TLS_SERVER_NAME` | `options.serverName` | Server Name (mast match for SNI) |
+| `WECHATY_PUPPET_SERVICE_NO_TLS_INSECURE_CLIENT` | `options.tls.disable` | Set `true` to disable client TLS |
+
+> Learn more about tls at https://github.com/wechaty/puppet-service
+
 ## Wechaty Getting Started in Multiple Languages
 
 - [TypeScript Wechaty Getting Started](https://github.com/wechaty/wechaty-getting-started)
